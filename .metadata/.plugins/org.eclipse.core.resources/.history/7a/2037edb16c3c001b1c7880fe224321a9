@@ -1,0 +1,45 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import com.anodiam.teacherWebservice.payload.response.MessageResponse;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="mst_content_type")
+public class ContentType {
+    @Id
+    private Long content_type_id;
+    private String content_type_desc;
+
+    @Transient
+    private MessageResponse returnMessage;
+
+    public ContentType(){}
+
+    public Long getContent_type_id() {
+        return content_type_id;
+    }
+
+    public void setContent_type_id(Long content_type_id) {
+        this.content_type_id = content_type_id;
+    }
+
+    public String getContent_type_desc() {
+        return content_type_desc;
+    }
+
+    public void setContent_type_desc(String content_type_desc) {
+        this.content_type_desc = content_type_desc;
+    }
+
+    public MessageResponse getReturnMessage() {
+        return returnMessage;
+    }
+
+    public void setReturnMessage(MessageResponse returnMessage) {
+        this.returnMessage = returnMessage;
+    }
+}

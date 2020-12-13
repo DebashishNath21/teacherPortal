@@ -1,0 +1,45 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import com.anodiam.teacherWebservice.payload.response.MessageResponse;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="mst_language")
+public class Language {
+    @Id
+    private Long language_id;
+    private String language_name;
+
+    @Transient
+    private MessageResponse returnMessage;
+
+    public Language(){}
+
+    public Long getLanguage_id() {
+        return language_id;
+    }
+
+    public void setLanguage_id(Long language_id) {
+        this.language_id = language_id;
+    }
+
+    public String getLanguage_name() {
+        return language_name;
+    }
+
+    public void setLanguage_name(String language_name) {
+        this.language_name = language_name;
+    }
+
+    public MessageResponse getReturnMessage() {
+        return returnMessage;
+    }
+
+    public void setReturnMessage(MessageResponse returnMessage) {
+        this.returnMessage = returnMessage;
+    }
+}

@@ -1,0 +1,59 @@
+package com.anodiam.teacherPortal.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.web.client.RestTemplate;
+
+@Controller
+public class teacherController {
+	
+	@RequestMapping("/")
+    public String index() {
+        return "redirect:/login";
+    }
+
+	@RequestMapping("/login")
+    public String login() throws JSONException {
+		doLogin();
+        return "login";
+    }
+	
+	
+
+	@RequestMapping("/signup")
+    public String signup() {
+        return "signup";
+    }
+	
+	private void doLogin() throws JSONException{
+		try {
+			String createPersonUrl = "localhost:8090/api/auth/signin";
+	        ObjectMapper objectMapper = new ObjectMapper();
+	
+	        RestTemplate restTemplate = new RestTemplate();
+	        HttpHeaders headers = new HttpHeaders();
+	        headers.setContentType(MediaType.APPLICATION_JSON);
+	        JSONObject personJsonObject = new JSONObject();
+	        personJsonObject.put("username", "debashish");
+	        personJsonObject.put("password", "dnath");
+	
+	        HttpEntity<String> request =
+	                new HttpEntity<String>(personJsonObject.toString(), headers);
+	
+	        String personResultAsJsonStr =
+	                restTemplate.postForObject(createPersonUrl, request, String.class);
+	        //JsonNode root = objectMapper.readTree(personResultAsJsonStr);
+		}
+		catch (Exception e) {
+			System.out.println("Inside Catch of DOLOGIN method:" + e);
+			// TODO: handle exception
+		}
+    }
+
+}

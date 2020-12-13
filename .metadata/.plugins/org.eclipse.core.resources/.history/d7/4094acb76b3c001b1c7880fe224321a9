@@ -1,0 +1,90 @@
+package com.anodiam.teacherPortal.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.web.client.RestTemplate;
+
+@Controller
+public class teacherController {
+	
+	@RequestMapping("/")
+    public String index() {
+        return "redirect:/login";
+    }
+
+	@RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+	
+	@RequestMapping(value = "/myHome", method = RequestMethod.POST)
+    public String myHome(
+    		HttpServletRequest request,
+			@ModelAttribute("username") String username,
+			@ModelAttribute("password") String password,
+			Model model
+			) throws JSONException {
+		try {
+			System.out.println("1 SIGNUP");
+			doLogin();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			System.out.println("2 SIGNUP");
+			e.printStackTrace();
+		}
+		System.out.println("3 SIGNUP");
+        return "myHome";
+    }
+
+	@RequestMapping("/signup")
+    public String signup() {
+        return "signup";
+    }
+	
+	private void doLogin(String username, String password) throws JSONException{
+		try {
+			System.out.println("1 DOLOGIN");
+			String createPersonUrl = "http://localhost:8090/api/auth/signin";
+	        ObjectMapper objectMapper = new ObjectMapper();
+	
+	        System.out.println("2 DOLOGIN");
+			RestTemplate restTemplate = new RestTemplate();
+	        HttpHeaders headers = new HttpHeaders();
+	        headers.setContentType(MediaType.APPLICATION_JSON);
+	        JSONObject personJsonObject = new JSONObject();
+	        personJsonObject.put("username", username);
+	        personJsonObject.put("password", password);
+	
+	        System.out.println("3 DOLOGIN");
+			
+	        HttpEntity<String> request =
+	                new HttpEntity<String>(personJsonObject.toString(), headers);
+	
+	        System.out.println("4 DOLOGIN");
+			
+	        String personResultAsJsonStr =
+	                restTemplate.postForObject(createPersonUrl, request, String.class);
+	        //JsonNode root = objectMapper.readTree(personResultAsJsonStr);
+	        System.out.println(personResultAsJsonStr);
+			
+		}
+		catch (Exception e) {
+			System.out.println("Inside Catch of DOLOGIN method:" + e.getMessage());
+			// TODO: handle exception
+		}
+    }
+
+}

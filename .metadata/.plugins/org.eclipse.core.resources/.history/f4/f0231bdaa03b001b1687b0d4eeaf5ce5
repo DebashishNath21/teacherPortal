@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+<body>
+<div th:replace="common/topBand :: common-topBand"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4"><h2>Teacher Signup:</h2></div>
+		<div class="col-xs-4"></div>
+	</div>
+	<div class="row">
+        <div class="col-xs-2"></div>
+    	<div class="col-xs-8">
+    		<h4>Please enter the following details. Fields that are marked 
+    		<b><span class="mandatory-anodiam">*</span></b> are mandatory.</h4>
+    		<div class="bg-danger" th:if="${param.error}">
+    			<span th:text="${message}? ${#strings.message} : 'Invalid input(s).'"></span>
+            </div>
+            <div class="alert alert-success" th:if="${updateSuccess}">
+                Anodiam Admin has been notified about your application. You will receive an email correspondence from them soon.  
+            </div>
+    	</div>
+    	<div class="col-xs-2"></div>
+	</div>
+	<form method="post" th:action="@{/updateUserInfo}">
+        <div class="bg-info" th:if="${updateUserInfo}">
+            User Info Updated.
+        </div>
+		<h3>Personal details:</h3>
+    	<div class="panel-group panel panel-default panel-anodiam panel-body panel-body-anodiam">
+	        <div class="col-xs-6">
+    			<div class="form-group">
+	    			<div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="firstName"><b><span class="mandatory-anodiam">*</span></b>First Name</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="firstName" name="firstName"	type="text" placeholder="First Name"/>
+	                		<!-- th:value="${user.firstName}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="middleName"><b><span class="mandatory-anodiam">&nbsp;&nbsp;</span></b>
+	    					Middle Name</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="middleName" name="middleName"	type="text" placeholder="Middle Name"/>
+	                		<!-- th:value="${user.middleName}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="lastName"><b><span class="mandatory-anodiam">*</span></b>
+	    					Last Name</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="lastName" name="lastName"	type="text" placeholder="Last Name"/>
+	                		<!-- th:value="${user.lastName}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="email"><b><span class="mandatory-anodiam">*</span></b>
+	    					Email</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="email" name="email"	type="text" placeholder="Email"/>
+	                		<!-- th:value="${user.email}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="teacherid"><b><span class="mandatory-anodiam">*</span></b>
+	    					Teacher Id</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="teacherid" name="teacherid"	type="text" placeholder="Teacher Id"/>
+	                		<!-- th:value="${user.teacherid}" -->
+	                	</div>
+	                </div>
+	            </div>
+    		</div>
+	        <div class="col-xs-6">
+    			<div class="form-group">
+	    			<div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="phoneNumber"><b><span class="mandatory-anodiam">*</span></b>Phone Number</label>
+	    				</div>
+	    				<div class="col-xs-2">
+	                		<input class="form-control" id="isd" name="isd"	type="text" placeholder="ISD" />
+	                		<!-- th:value="${user.isd}" -->
+	                	</div>
+	                	<div class="col-xs-5">
+	                		<input class="form-control" id="phoneNumber" name="phoneNumber"	type="text" />
+	                		<!-- th:value="${user.phoneNumber}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="address1"><b><span class="mandatory-anodiam">&nbsp;&nbsp;</span></b>
+	    					Address Line 1</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="address1" name="address1"	type="text" placeholder="House number, Street name"/>
+	                		<!-- th:value="${user.address1}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="address2"><b><span class="mandatory-anodiam">&nbsp;&nbsp;</span></b>
+	    					Address Line 2</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="address2" name="address2"	type="text" placeholder="City / Suburb, State, PIN / ZIP"/>
+	                		<!-- th:value="${user.address2}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="country"><b><span class="mandatory-anodiam">*</span></b>
+	    					Country</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="country" name="country"	type="text" placeholder="Select Country"/>
+	                		<!-- th:value="${user.country}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="dob"><b><span class="mandatory-anodiam">*</span></b>
+	    					Date of Birth</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="dob" name="dob"	type="date" />
+	                		<!-- th:value="${user.dob}" -->
+	                	</div>
+	                </div>
+	            </div>
+    		</div>
+    	</div>
+    </form>
+</div>
+<div th:replace="common/footer :: common-footer"></div>
+<div th:replace="common/header :: body-bottom-scripts"></div>
+</body>
+</html>

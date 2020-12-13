@@ -1,0 +1,88 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import com.anodiam.teacherWebservice.models.auth.User;
+import com.anodiam.teacherWebservice.payload.response.MessageResponse;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="trn_teacher_financial")
+public class TeacherFinancial {
+    @Id
+    private Long teacher_id;
+    private String account_no;
+    private String account_name;
+
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "teacher_id", referencedColumnName = "id")
+    private User user;
+
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "branch_id", referencedColumnName = "branch_id")
+    private BankBranch bankbranch;
+
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "teacher_id", referencedColumnName = "id")
+    private Currency curency;
+
+    @Transient
+    private MessageResponse returnMessage;
+
+    public TeacherFinancial(){}
+
+    public Long getTeacher_id() {
+        return teacher_id;
+    }
+
+    public void setTeacher_id(Long teacher_id) {
+        this.teacher_id = teacher_id;
+    }
+
+    public String getAccount_no() {
+        return account_no;
+    }
+
+    public void setAccount_no(String account_no) {
+        this.account_no = account_no;
+    }
+
+    public String getAccount_name() {
+        return account_name;
+    }
+
+    public void setAccount_name(String account_name) {
+        this.account_name = account_name;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public BankBranch getBankbranch() {
+        return bankbranch;
+    }
+
+    public void setBankbranch(BankBranch bankbranch) {
+        this.bankbranch = bankbranch;
+    }
+
+    public Currency getCurency() {
+        return curency;
+    }
+
+    public void setCurency(Currency curency) {
+        this.curency = curency;
+    }
+
+    public MessageResponse getReturnMessage() {
+        return returnMessage;
+    }
+
+    public void setReturnMessage(MessageResponse returnMessage) {
+        this.returnMessage = returnMessage;
+    }
+}

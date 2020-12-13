@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="header :: common-header">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="common-footer">
+    <br/><br/>
+    <footer id="main-footer">
+        <div class="row">
+            <div class="col-xs-2 footerleft">
+                <div class="logofooter">
+                    <a th:href="@{/}"><img class="img-responsive" src="/images/AnodiamLogo120x300.bmp"
+                                           style="width:165px;padding-left:60px;"/></a>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <h5 class="heading7" style="padding-left:80px;">CONTACT</h5>
+                <ul class="post">
+                    <p>&#x1F4E7;&nbsp; Email: 1120anirban@anodiam.com</p>
+                    <p>&phone;&nbsp; Phone: +91 9874780111</p>
+                </ul>
+            </div>
+            <div class="col-xs-3">
+                <h5 class="heading7" style="padding-left:20px;">LINKS</h5>
+                <ul class="footer-ul">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms &#38; Conditions</a></li>
+                    <li><a href="#">Frequently Asked Questions</a></li>
+                    <li><a href="#">About Anodiam</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-3">
+                <h5 class="heading7" style="padding-left:20px;">COMMUNITY</h5>
+                <ul class="footer-ul">
+                    <li><a th:href="@{/news}">News Forum</a></li>
+                    <li><a th:href="@{/honor}">Honor Board</a></li>
+                    <li>
+                        <a class="fa fa-facebook" href="#"></a>
+                        &nbsp;
+                        <a class="fa fa-twitter" href="#"></a>
+                        &nbsp;
+                        <a class="fa fa-whatsapp" href="#"></a>
+                        &nbsp;
+                        <a class="fa fa-instagram" href="#"></a>
+                        &nbsp;
+                        <a class="fa fa-linkedin" href="#"></a>
+                        &nbsp;
+                        <a class="fa fa-android" href="#"></a>
+                        &nbsp;
+                        <a class="fa fa-tumblr" href="#"></a>
+                        &nbsp;
+                        <a class="fa fa-flickr" href="#"></a>
+                        &nbsp;
+                        <a class="fa fa-youtube" href="#"></a>
+                        &nbsp;
+                        <a class="fa fa-skype" href="#"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row copyright container-anodiam" id="bottom-footer">
+            <div class="col-md-6">
+                <p style="text-align:center;vertical-align:center;">
+                    Copyright &copy; 2020 - All Rights Reserved. Anodiam Ltd.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <ul class="bottom_ul">
+                    <li><a th:href="#{adminPath}">Become a teacher</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

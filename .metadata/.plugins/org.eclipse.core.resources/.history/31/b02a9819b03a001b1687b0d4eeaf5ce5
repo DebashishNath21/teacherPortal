@@ -1,0 +1,320 @@
+body {
+}
+
+#anodiam-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(119, 119, 119, 1);
+}
+#anodiam-bootstrap-menu.navbar-default {
+    font-size: 14px;
+    background-color: rgba(15, 15, 127, 0.85);
+    background: -webkit-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(15, 15, 127, 0.55) 100%);
+    background: linear-gradient(to bottom, rgba(248, 248, 248, 1) 0%, rgba(15, 15, 127, 0.55) 100%);
+    border-width: 1px;
+    border-radius: 4px;
+}
+#anodiam-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#anodiam-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#anodiam-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(51, 51, 51, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#anodiam-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#anodiam-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#anodiam-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(231, 231, 231, 1);
+}
+#anodiam-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #ddd;
+}
+#anodiam-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#anodiam-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #ddd;
+}
+#anodiam-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+#anodiam-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#anodiam-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #0f0f7f;
+}
+
+.navbar {
+    margin: 0 20px;
+    border-radius: 30px;
+}
+
+.corousel-top-bottom-margin {
+    margin: 10px 0;
+}
+
+.anodiam-top-band {
+	height: 80px;
+    width:100%;
+    background-color: #afafff;
+    color: #fff;
+    font-family: 'Cooper Black', 'Montserrat', Arial, Helvetica, 'Times New Roman', Times, serif;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.anodiam-logo {
+	height: 80px;
+}
+
+.anodiam-page-top {
+    /*border: 1px solid black;*/
+    height: 80px;
+    width:100%;
+    background-color: #8f8fff;
+    color: #fff;
+    font-family: 'Montserrat', Arial, Helvetica, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.anodiam-page-top-message {
+    /* border: 1px solid white; */
+    height: 20px;
+    margin: 10px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.anodiam-navbar-background {
+    background-color: #8f8fff;
+    width: 100%;
+}
+/**************************************
+*********  Anodiam Proprietary  *******
+"anodiam-logo-image" CSS Classes to
+display Anodiam logo on top left of
+Anodiam application.
+***************************************/
+
+.anodiam-logo-image {
+    height: 60px;
+    width: 150px;
+    margin: 10px;
+}
+
+.section-heading {
+    font-family: 'Montserrat', Arial, Helvetica, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #fff;
+    margin: auto;
+    text-align: center;
+    margin: 10px;
+}
+
+.section-heading span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6f6fef;
+    padding: 5px 22px;
+}
+
+.tab-heading {
+    color: #6f6fef;
+}
+
+.tab-heading:focus {
+    color: #6f6fef;
+    background: #dfdfff;
+}
+
+.panel-anodiam {
+    border: none;
+}
+
+.panel-body-anodiam {
+    background-color: #dfdfff;
+    margin-top: 20px;
+}
+
+.input-prompt-anodiam {
+    color: #8f8fff;
+}
+
+.box {
+    /* margin-top: -20px; */
+    width:100%;
+    background-image: linear-gradient(#8f8fff, #8f8fff 33%, #fff 66%, #fff 100%);
+}
+
+.box-2 {
+    /* margin-top: -20px; */
+    width:80%;
+}
+
+#main-footer {
+    padding: 20px;
+    margin-top: 10px;
+    height: 60px;
+    width:100%;
+    background-color: #8f8fff;
+    color: #fff;
+    font-family: 'Montserrat', Arial, Helvetica, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.btn-anodiam {
+    color: #0f0f7f;
+    font-size: 16px;
+    display: inline;
+    box-sizing: border-box;
+    background-color: #6f6fef;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #8f8fff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #8f8fff;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/**************************************
+*********  Anodiam Proprietary  *******
+"navbar-anodiam" CSS Classes have been
+designed to give the look and feel of
+Anodiam themes.
+***************************************/
+.navbar-anodiam {
+    background-color:#6f6fef;
+    border-color:#6f6fef;
+    border-radius: 32px;
+}
+
+.navbar-anodiam .navbar-text{color:#0f0f7f}
+
+.navbar-anodiam .navbar-nav>li>a{color:#0f0f7f}
+
+.navbar-anodiam .navbar-nav>li>a:focus,.navbar-anodiam .navbar-nav>li>a:hover{color:#fff;background-color:transparent}
+
+.navbar-anodiam .navbar-nav>.active>a,.navbar-anodiam .navbar-nav>.active>a:focus,.navbar-anodiam .navbar-nav>.active>a:hover{color:#fff;background-color:#0f0f7f}
+
+.navbar-anodiam .navbar-nav>.disabled>a,.navbar-anodiam .navbar-nav>.disabled>a:focus,.navbar-anodiam .navbar-nav>.disabled>a:hover{color:#4f4fcf;background-color:transparent}
+
+.navbar-anodiam .navbar-toggle{border-color:#2f2faf}
+
+.navbar-anodiam .navbar-toggle:focus,.navbar-anodiam .navbar-toggle:hover{background-color:#2f2faf}
+
+.navbar-anodiam .navbar-toggle .icon-bar{background-color:#fff}
+
+.navbar-anodiam .navbar-collapse,.navbar-anodiam .navbar-form{border-color:#0f0f7f}
+
+.navbar-anodiam .navbar-nav>.open>a,.navbar-anodiam .navbar-nav>.open>a:focus,.navbar-anodiam .navbar-nav>.open>a:hover {color:#fff;background-color:#0f0f7f}
+
+@media (max-width:767px){.navbar-anodiam .navbar-nav .open .dropdown-menu>.dropdown-header{border-color:#0f0f7f}
+.navbar-anodiam .navbar-nav .open .dropdown-menu .divider{background-color:#0f0f7f}
+.navbar-anodiam .navbar-nav .open .dropdown-menu>li>a{color:#9f9fff}
+.navbar-anodiam .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-anodiam .navbar-nav .open .dropdown-menu>li>a:hover{color:#fff;background-color:transparent}
+.navbar-anodiam .navbar-nav .open .dropdown-menu>.active>a,.navbar-anodiam .navbar-nav .open .dropdown-menu>.active>a:focus,.navbar-anodiam .navbar-nav .open .dropdown-menu>.active>a:hover{color:#fff;background-color:#0f0f7f}
+.navbar-anodiam .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-anodiam .navbar-nav .open .dropdown-menu>.disabled>a:focus,.navbar-anodiam .navbar-nav .open .dropdown-menu>.disabled>a:hover{color:#4f4fcf;background-color:transparent}}
+
+.navbar-anodiam .navbar-link{color:#0f0f7f}
+
+.navbar-anodiam .navbar-link:hover{color:#fff}
+
+.navbar-anodiam .btn-link{color:#9f9fff}
+
+.navbar-anodiam .btn-link:focus,.navbar-anodiam .btn-link:hover{color:#fff}
+
+.navbar-anodiam .btn-link[disabled]:focus,.navbar-anodiam .btn-link[disabled]:hover,fieldset[disabled] .navbar-anodiam .btn-link:focus,fieldset[disabled] .navbar-anodiam .btn-link:hover{color:#4f4fcf}
+
+#news-anodiam {
+    float: left;
+    width: 70%;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+#sidebar-anodiam {
+    float: right;
+    width: 30%;
+    background: #2f2faf;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container-anodiam {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+@media(max-width: 767px) {
+    #news-anodiam {
+        width: 100%;
+        float: none;
+    }
+    #sidebar-anodiam {
+        width: 100%;
+        float: none;
+    }
+}

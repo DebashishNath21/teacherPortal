@@ -1,0 +1,42 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import com.anodiam.teacherWebservice.payload.response.MessageResponse;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="mst_bank")
+public class Bank {
+    @Id
+    private Long bank_id;
+    private String bank_name;
+
+    @Transient
+    private MessageResponse returnMessage;
+
+    public Bank(){}
+
+    public Long getBank_id() {
+        return bank_id;
+    }
+
+    public void setBank_id(Long bank_id) {
+        this.bank_id = bank_id;
+    }
+
+    public String getBank_name() {
+        return bank_name;
+    }
+
+    public void setBank_name(String bank_name) {
+        this.bank_name = bank_name;
+    }
+
+    public MessageResponse getReturnMessage() {
+        return returnMessage;
+    }
+
+    public void setReturnMessage(MessageResponse returnMessage) {
+        this.returnMessage = returnMessage;
+    }
+}

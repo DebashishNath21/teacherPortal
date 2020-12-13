@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head>
+</head>
+<body>
+<div th:fragment="common-footer">
+    <footer id="main-footer">
+        <div class="row">
+            <div class="col-xs-3 footerleft">
+                <div class="logofooter">
+                    <a th:href="@{/}"><img class="img-responsive" src="/images/AnodiamLogo120x300.bmp"
+                                           style="width:165px;padding-left:60px;"/></a>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <h5 class="heading7" style="padding-left:80px;">CONTACT</h5>
+                <ul class="post">
+                    <li><a href="#">&#x1F4E7;&nbsp; Email: admin@anodiam.com</a></li>
+                    <li><a href="#">&phone;&nbsp; Phone: +61 405 706 206</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-3">
+                <h5 class="heading7" style="padding-left:20px;">LINKS</h5>
+                <ul class="footer-ul">
+                    <li><a href="#">Terms &#38; Conditions</a></li>
+                    <li><a href="#">About Anodiam</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-3">
+                <h5 class="heading7" style="padding-left:20px;">COMMUNITY</h5>
+                <ul class="footer-ul">
+                    <li><a th:href="@{/news}">News Forum</a></li>
+                    <li><a th:href="@{/honor}">Honor Board</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row copyright container-anodiam" id="bottom-footer">
+            <div class="col-md-6">
+                <p style="text-align:center;vertical-align:center;">
+                    Copyright &copy; 2020 - All Rights Reserved. Anodiam Ltd.
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

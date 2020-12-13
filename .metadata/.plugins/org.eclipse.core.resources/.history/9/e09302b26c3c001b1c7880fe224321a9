@@ -1,0 +1,62 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="chapter")
+public class Chapter {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long chapter_id;
+    private String chapter_title;
+    private String chapter_description;
+
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "course_id", referencedColumnName = "id")
+    private Course course;
+
+    public Chapter(Long chapter_id, String chapter_title, String chapter_description, Course course) {
+        this.chapter_id = chapter_id;
+        this.chapter_title = chapter_title;
+        this.chapter_description = chapter_description;
+        this.course = course;
+    }
+
+    public Chapter() {
+    }
+
+    public Long getChapter_id() {
+        return chapter_id;
+    }
+
+    public void setChapter_id(Long chapter_id) {
+        this.chapter_id = chapter_id;
+    }
+
+    public String getChapter_title() {
+        return chapter_title;
+    }
+
+    public void setChapter_title(String chapter_title) {
+        this.chapter_title = chapter_title;
+    }
+
+    public String getChapter_description() {
+        return chapter_description;
+    }
+
+    public void setChapter_description(String chapter_description) {
+        this.chapter_description = chapter_description;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+}

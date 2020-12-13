@@ -1,0 +1,45 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import com.anodiam.teacherWebservice.payload.response.MessageResponse;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="mst_board_university")
+public class BoardUniversity {
+    @Id
+    private Long board_university_id;
+    private String board_university_name;
+
+    @Transient
+    private MessageResponse returnMessage;
+
+    public BoardUniversity(){}
+
+    public Long getBoard_university_id() {
+        return board_university_id;
+    }
+
+    public void setBoard_university_id(Long board_university_id) {
+        this.board_university_id = board_university_id;
+    }
+
+    public String getBoard_university_name() {
+        return board_university_name;
+    }
+
+    public void setBoard_university_name(String board_university_name) {
+        this.board_university_name = board_university_name;
+    }
+
+    public MessageResponse getReturnMessage() {
+        return returnMessage;
+    }
+
+    public void setReturnMessage(MessageResponse returnMessage) {
+        this.returnMessage = returnMessage;
+    }
+}

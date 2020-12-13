@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+<body>
+<div class="container">
+    <h5 class="center-block">Welcome to Admin Portal for Anodiam Classes</h5>
+    <hr/>
+    <img class="img-responsive" style="width:65px;" th:src="@{/images/AnodiamLogo.bmp}"/>
+    <div class="row">
+        <div class="col-xs-4 col-md-offset-4">
+            <div class="bg-danger" th:if="${param.error}">
+                Invalid usrename or password.
+            </div>
+            <div class="bg-danger" th:if="${param.logout}">
+                You have been logged out.
+            </div>
+            <form class="form-signin" method="post" th:action="@{/login}">
+                <h2 class="form-signin-heading">Please sign in</h2>
+                <div class="form-group">
+                    <label class="sr-only" for="username">Username</label>
+                    <input autofocus="autofocus" class="form-control" id="username" name="username"
+                           placeholder="Username" required="required" type="text"/>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="password">Password</label>
+                    <input class="form-control" id="password" name="password" placeholder="password"
+                           required="required" type="password"/>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="common/footer :: common-footer" />
+<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

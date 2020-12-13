@@ -1,0 +1,121 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import com.anodiam.teacherWebservice.models.auth.User;
+import com.anodiam.teacherWebservice.payload.response.MessageResponse;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="mst_teacher")
+public class Teacher {
+    @Id
+    private Long teacher_id;
+    private String subjects_taught;
+    private Integer experience_years;
+    private String institutions;
+    private String board_or_university;
+    private String cv_link;
+    private String cover_letter_link;
+    private String profile_pic_link;
+
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "teacher_id", referencedColumnName = "id")
+    private User user;
+
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "language_id", referencedColumnName = "language_id")
+    private Language language;
+
+    @Transient
+    private MessageResponse returnMessage;
+
+    public Teacher(){}
+
+    public Long getTeacher_id() {
+        return teacher_id;
+    }
+
+    public void setTeacher_id(Long teacher_id) {
+        this.teacher_id = teacher_id;
+    }
+
+    public String getSubjects_taught() {
+        return subjects_taught;
+    }
+
+    public void setSubjects_taught(String subjects_taught) {
+        this.subjects_taught = subjects_taught;
+    }
+
+    public Integer getExperience_years() {
+        return experience_years;
+    }
+
+    public void setExperience_years(Integer experience_years) {
+        this.experience_years = experience_years;
+    }
+
+    public String getInstitutions() {
+        return institutions;
+    }
+
+    public void setInstitutions(String institutions) {
+        this.institutions = institutions;
+    }
+
+    public String getBoard_or_university() {
+        return board_or_university;
+    }
+
+    public void setBoard_or_university(String board_or_university) {
+        this.board_or_university = board_or_university;
+    }
+
+    public String getCv_link() {
+        return cv_link;
+    }
+
+    public void setCv_link(String cv_link) {
+        this.cv_link = cv_link;
+    }
+
+    public String getCover_letter_link() {
+        return cover_letter_link;
+    }
+
+    public void setCover_letter_link(String cover_letter_link) {
+        this.cover_letter_link = cover_letter_link;
+    }
+
+    public String getProfile_pic_link() {
+        return profile_pic_link;
+    }
+
+    public void setProfile_pic_link(String profile_pic_link) {
+        this.profile_pic_link = profile_pic_link;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
+    public MessageResponse getReturnMessage() {
+        return returnMessage;
+    }
+
+    public void setReturnMessage(MessageResponse returnMessage) {
+        this.returnMessage = returnMessage;
+    }
+}

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<body>
+<div th:fragment="common-topBand">
+<div class="row">
+	<div class=""></div>
+	<div class="">
+		<img class="img-responsive" style="width:100px;" th:src="@{/images/AnodiamLogo.jpg}"/>
+	</div>
+</div>
+</div>
+</body>
+</html>

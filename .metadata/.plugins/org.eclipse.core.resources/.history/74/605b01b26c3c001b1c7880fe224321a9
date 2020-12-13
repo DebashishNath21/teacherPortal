@@ -1,0 +1,63 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import com.anodiam.teacherWebservice.payload.response.MessageResponse;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="mst_bank_branch")
+public class BankBranch {
+    @Id
+    private Integer branch_id;
+    private String branch_name;
+    private String IFSC_or_BSB;
+
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "bank_id", referencedColumnName = "bank_id")
+    private Bank bank;
+
+    @Transient
+    private MessageResponse returnMessage;
+
+    public BankBranch(){}
+
+    public Integer getBranch_id() {
+        return branch_id;
+    }
+
+    public void setBranch_id(Integer branch_id) {
+        this.branch_id = branch_id;
+    }
+
+    public String getBranch_name() {
+        return branch_name;
+    }
+
+    public void setBranch_name(String branch_name) {
+        this.branch_name = branch_name;
+    }
+
+    public String getIFSC_or_BSB() {
+        return IFSC_or_BSB;
+    }
+
+    public void setIFSC_or_BSB(String IFSC_or_BSB) {
+        this.IFSC_or_BSB = IFSC_or_BSB;
+    }
+
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
+
+    public MessageResponse getReturnMessage() {
+        return returnMessage;
+    }
+
+    public void setReturnMessage(MessageResponse returnMessage) {
+        this.returnMessage = returnMessage;
+    }
+}

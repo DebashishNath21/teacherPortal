@@ -1,0 +1,45 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import com.anodiam.teacherWebservice.payload.response.MessageResponse;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="mst_class")
+public class ClassMaster {
+    @Id
+    private Long class_id;
+    private String class_name;
+
+    @Transient
+    private MessageResponse returnMessage;
+
+    public ClassMaster(){}
+
+    public Long getClass_id() {
+        return class_id;
+    }
+
+    public void setClass_id(Long class_id) {
+        this.class_id = class_id;
+    }
+
+    public String getClass_name() {
+        return class_name;
+    }
+
+    public void setClass_name(String class_name) {
+        this.class_name = class_name;
+    }
+
+    public MessageResponse getReturnMessage() {
+        return returnMessage;
+    }
+
+    public void setReturnMessage(MessageResponse returnMessage) {
+        this.returnMessage = returnMessage;
+    }
+}

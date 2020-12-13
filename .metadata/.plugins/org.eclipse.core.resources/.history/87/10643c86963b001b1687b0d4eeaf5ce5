@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+<body>
+<div th:replace="common/topBand :: common-topBand"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4"><h2>Teacher Signup:</h2></div>
+		<div class="col-xs-4"></div>
+	</div>
+	<div class="row">
+        <div class="col-xs-2"></div>
+    	<div class="col-xs-8">
+    		<h4>Please enter the following details. Fields that are marked 
+    		<b><span class="mandatory-anodiam">*</span></b> are mandatory.</h4>
+    		<div class="bg-danger" th:if="${param.error}">
+    			<span th:text="${message}? ${#strings.message} : 'Invalid input(s).'"></span>
+            </div>
+            <div class="alert alert-success" th:if="${updateSuccess}">
+                Anodiam Admin has been notified about your application. You will receive an email correspondence from them soon.  
+            </div>
+    	</div>
+    	<div class="col-xs-2"></div>
+	</div>
+	<form method="post" th:action="@{/updateUserInfo}">
+        <div class="bg-info" th:if="${updateUserInfo}">
+            User Info Updated.
+        </div>
+		<h3>Personal details:</h3>
+    	<div class="panel-group panel panel-default panel-anodiam panel-body panel-body-anodiam">
+	        <div class="col-xs-6">
+    			<div class="form-group">
+	    			<div class="row">
+	    				<div class="col-xs-3">
+	    					<label for="firstName"><b><span class="mandatory-anodiam">*</span></b>First Name</label>
+	    				</div>
+	    				<div class="col-xs-8">
+	                		<input class="form-control" id="firstName" name="firstName"	type="text" placeholder="First Name"/>
+	                		<!-- th:value="${user.firstName}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-3">
+	    					<label for="middleName"><b><span class="mandatory-anodiam">&nbsp;&nbsp;</span></b>
+	    					Middle Name</label>
+	    				</div>
+	    				<div class="col-xs-8">
+	                		<input class="form-control" id="middleName" name="middleName"	type="text" placeholder="Middle Name"/>
+	                		<!-- th:value="${user.middleName}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-3">
+	    					<label for="lastName"><b><span class="mandatory-anodiam">*</span></b>
+	    					Last Name</label>
+	    				</div>
+	    				<div class="col-xs-8">
+	                		<input class="form-control" id="lastName" name="lastName"	type="text" placeholder="Last Name"/>
+	                		<!-- th:value="${user.lastName}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-3">
+	    					<label for="email"><b><span class="mandatory-anodiam">*</span></b>
+	    					Email</label>
+	    				</div>
+	    				<div class="col-xs-8">
+	                		<input class="form-control" id="email" name="email"	type="text" placeholder="Email"/>
+	                		<!-- th:value="${user.email}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-3">
+	    					<label for="teacherid"><b><span class="mandatory-anodiam">*</span></b>
+	    					Teacher Id</label>
+	    				</div>
+	    				<div class="col-xs-8">
+	                		<input class="form-control" id="teacherid" name="teacherid"	type="text" placeholder="Teacher Id"/>
+	                		<!-- th:value="${user.teacherid}" -->
+	                	</div>
+	                </div>
+	            </div>
+    		</div>
+	        <div class="col-xs-6">
+    			<div class="form-group">
+	    			<div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="phoneNumber"><b><span class="mandatory-anodiam">*</span></b>Phone Number</label>
+	    				</div>
+	    				<div class="col-xs-2">
+	                		<input class="form-control" id="isd" name="isd"	type="text" placeholder="ISD" />
+	                		<!-- th:value="${user.isd}" -->
+	                	</div>
+	                	<div class="col-xs-5">
+	                		<input class="form-control" id="phoneNumber" name="phoneNumber"	type="text" />
+	                		<!-- th:value="${user.phoneNumber}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-4">
+	    					<label for="address1"><b><span class="mandatory-anodiam">&nbsp;&nbsp;</span></b>
+	    					Address Line 1</label>
+	    				</div>
+	    				<div class="col-xs-7">
+	                		<input class="form-control" id="address1" name="address1"	type="text" placeholder="House number, Street name"/>
+	                		<!-- th:value="${user.address1}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-3">
+	    					<label for="lastName"><b><span class="mandatory-anodiam">*</span></b>
+	    					Last Name</label>
+	    				</div>
+	    				<div class="col-xs-8">
+	                		<input class="form-control" id="lastName" name="lastName"	type="text" placeholder="Last Name"/>
+	                		<!-- th:value="${user.lastName}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-3">
+	    					<label for="email"><b><span class="mandatory-anodiam">*</span></b>
+	    					Email</label>
+	    				</div>
+	    				<div class="col-xs-8">
+	                		<input class="form-control" id="email" name="email"	type="text" placeholder="Email"/>
+	                		<!-- th:value="${user.email}" -->
+	                	</div>
+	                </div>
+	                <div class="row">
+	    				<div class="col-xs-3">
+	    					<label for="teacherid"><b><span class="mandatory-anodiam">*</span></b>
+	    					Teacher Id</label>
+	    				</div>
+	    				<div class="col-xs-8">
+	                		<input class="form-control" id="teacherid" name="teacherid"	type="text" placeholder="Teacher Id"/>
+	                		<!-- th:value="${user.teacherid}" -->
+	                	</div>
+	                </div>
+	            </div>
+    		</div>
+    	</div>
+    </form>
+
+	    					<b><span class="mandatory-anodiam">**********</span></b>
+
+
+
+		                <div class="row">
+		                        <div class="form-group">
+		                            <label for="firstName">First Name</label>
+		                            <input class="form-control" id="firstName" name="firstName"
+                                    type="text"/><!-- th:value="${user.firstName}" -->
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input class="form-control" id="lastName" name="lastName"
+                                    type="text"/> <!-- th:value="${user.lastName}" -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userName">Userame</label>
+                    <input class="form-control" id="userName" name="username"
+                            type="text"/> <!-- th:value="${user.username}" -->
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input class="form-control" id="email" name="email"
+                            type="text"/> <!-- th:value="${user.email}" -->
+                    <p class="input-prompt-anodiam">Enter your email address.
+                        This email address will not be made public. Only system emails
+                        regarding password change and other systems notifications you
+                        may wish to receive, will be sent to this email address.</p>
+                </div>
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <span style="color: red;" th:if="${wrongPassword}">
+                        Current Password does not match. If you are signing up for the first time,
+                        your password has been sent to you in the email.
+                    </span>
+                    <input class="form-control" id="currentPassword" name="password"
+                           th:value="${currentPassword}" type="password"/>
+                    <p class="input-prompt-anodiam">If you are signing up for the first time,
+                        your password has been sent to you in the email. Enter your current
+                        password to change the email address or password.</p>
+                </div>
+                <div class="form-group">
+                    <label for="txtNewPassword">New Password</label>&nbsp;
+                    <span id="checkPasswordMatch" style="color:red;"></span>
+                    <input class="form-control" id="txtNewPassword" name="newPassword"
+                           type="password"/>
+                </div>
+                <div class="form-group">
+                    <label for="txtConfirmPassword">Confirm New Password</label>
+                    <span style="color: red;" th:if="${wrongConfirmPassword}">
+                        Confirm New Password does not match with New Password.
+                    </span>
+                    <input class="form-control" id="txtConfirmPassword"
+                           name="confirmPassword" type="password"/>
+                </div>
+                <p class="input-prompt-anodiam">To change Current Password,
+                    enter your new password in both fields.</p>
+                <!-- Submit Button -->
+                <button class="btn btn-primary" type="submit">Save All</button>
+	        </div>
+	    </div>
+
+
+
+
+<div th:replace="common/footer :: common-footer" />
+<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

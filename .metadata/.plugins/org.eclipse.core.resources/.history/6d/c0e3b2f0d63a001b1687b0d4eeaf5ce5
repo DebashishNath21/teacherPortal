@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+<body>
+<div th:replace="common/topBand :: common-topBand"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <div class="bg-danger" th:if="${param.error}">
+                Invalid usrename or password.
+            </div>
+            <div class="bg-danger" th:if="${param.logout}">
+                You have been logged out.
+            </div>
+            <form class="form-signin" method="post" th:action="@{/login}">
+                <h2 class="form-signin-heading">Sign in:</h2>
+                <div class="form-group">
+                    <label class="sr-only" for="username">Username</label>
+                    <input autofocus="autofocus" class="form-control" id="username" name="username"
+                           placeholder="Username" required="required" type="text"/>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="password">Password</label>
+                    <input class="form-control" id="password" name="password" placeholder="password"
+                           required="required" type="password">
+                    <button class="btn-inside" type="button" onclick="showHidePassword()"
+                    title="Mask/Unmask password to check content"><b>&#128065;</b></button>
+                    
+						<script>
+						function showHidePassword() {
+							var x = document.getElementById("password");
+							if (x.type === "password") {
+								x.type = "text";
+							} else {
+								x.type = "password";
+							}
+						}
+						</script>
+						
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            </form>
+            <div class="vertical-spacing"></div>
+			<div class="vertical-spacing"></div>
+			<div class="vertical-spacing"></div>
+		    Not yet a teacher with us? <a th:href="@{/signup}">Sign up here</a>
+		    <div class="vertical-spacing"></div>
+		    <a href="#">Forgot password / Change password</a>
+        </div>
+        <div class="col-xs-4"></div>
+    </div>
+</div>
+<div th:replace="common/footer :: common-footer" />
+<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

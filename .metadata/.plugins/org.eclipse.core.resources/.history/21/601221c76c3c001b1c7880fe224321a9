@@ -1,0 +1,73 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="lesson")
+public class Lesson {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long lesson_id;
+    private String lesson_title;
+    private String lesson_description;
+
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "chapter_id", referencedColumnName = "chapter_id")
+    private Chapter chapter;
+
+    @Transient
+    private MultipartFile lessonMedia;
+
+    public Lesson() {
+    }
+
+    public Lesson(Long lesson_id, String lesson_title, String lesson_description, MultipartFile lessonMedia) {
+        this.lesson_id = lesson_id;
+        this.lesson_title = lesson_title;
+        this.lesson_description = lesson_description;
+        this.lessonMedia = lessonMedia;
+    }
+
+    public Long getLesson_id() {
+        return lesson_id;
+    }
+
+    public void setLesson_id(Long lesson_id) {
+        this.lesson_id = lesson_id;
+    }
+
+    public String getLesson_title() {
+        return lesson_title;
+    }
+
+    public void setLesson_title(String lesson_title) {
+        this.lesson_title = lesson_title;
+    }
+
+    public String getLesson_description() {
+        return lesson_description;
+    }
+
+    public void setLesson_description(String lesson_description) {
+        this.lesson_description = lesson_description;
+    }
+
+    public Chapter getChapter() {
+        return chapter;
+    }
+
+    public void setChapter(Chapter chapter) {
+        this.chapter = chapter;
+    }
+
+    public MultipartFile getLessonMedia() {
+        return lessonMedia;
+    }
+
+    public void setLessonMedia(MultipartFile lessonMedia) {
+        this.lessonMedia = lessonMedia;
+    }
+}

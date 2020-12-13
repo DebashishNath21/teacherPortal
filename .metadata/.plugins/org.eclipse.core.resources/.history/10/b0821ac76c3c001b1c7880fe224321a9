@@ -1,0 +1,45 @@
+package com.anodiam.teacherWebservice.models.teacher;
+
+import com.anodiam.teacherWebservice.payload.response.MessageResponse;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="mst_difficulty")
+public class Difficulty {
+    @Id
+    private Long difficulty_id;
+    private String difficulty_name;
+
+    @Transient
+    private MessageResponse returnMessage;
+
+    public Difficulty(){}
+
+    public Long getDifficulty_id() {
+        return difficulty_id;
+    }
+
+    public void setDifficulty_id(Long difficulty_id) {
+        this.difficulty_id = difficulty_id;
+    }
+
+    public String getDifficulty_name() {
+        return difficulty_name;
+    }
+
+    public void setDifficulty_name(String difficulty_name) {
+        this.difficulty_name = difficulty_name;
+    }
+
+    public MessageResponse getReturnMessage() {
+        return returnMessage;
+    }
+
+    public void setReturnMessage(MessageResponse returnMessage) {
+        this.returnMessage = returnMessage;
+    }
+}
